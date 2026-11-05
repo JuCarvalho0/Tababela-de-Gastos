@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfólio | Controle de Gastos</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">Meu<span>Portfólio</span></div>
+  <nav>
+    <a href="#controle">Controle</a>
+    <a href="#dicas">Dicas</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Controle seus Gastos</h1>
+  <p>Uma forma moderna, simples e amigável de organizar suas finanças. Integração com banco de dados em tempo real.</p>
+</section>
+
+<main class="container">
+
+  <section class="resumo">
+    <div class="card-resumo">
+      <h3>Receitas</h3>
+      <div class="valor receita" id="totalReceitas">R$ 0,00</div>
+    </div>
+    <div class="card-resumo">
+      <h3>Despesas</h3>
+      <div class="valor despesa" id="totalDespesas">R$ 0,00</div>
+    </div>
+    <div class="card-resumo">
+      <h3>Saldo</h3>
+      <div class="valor saldo" id="totalSaldo">R$ 0,00</div>
+    </div>
+  </section>
+
+  <section class="form-section" id="controle">
+    <h2>➕ Adicionar Transação</h2>
+    <form class="form-grid" id="formTransacao">
+      <input type="text" id="descricao" placeholder="Descrição (ex: Mercado)" required>
+      <input type="number" id="valor" placeholder="Valor (R$)" step="0.01" min="0.01" required>
+      <select id="tipo" required>
+        <option value="DESPESA">Despesa</option>
+        <option value="RECEITA">Receita</option>
+      </select>
+      <input type="date" id="data" required>
+      <button type="submit" class="btn-add">Adicionar</button>
+    </form>
+    <p id="msg" class="msg"></p>
+  </section>
+
+  <section class="tabela-section">
+    <h2>📋 Histórico de Transações</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Descrição</th>
+          <th>Tipo</th>
+          <th>Data</th>
+          <th>Valor</th>
+          <th>Ação</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaBody">
+        <tr><td colspan="5" class="vazio">Carregando...</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="dicas-section" id="dicas">
+    <h2>💡 Dicas para Economizar</h2>
+    <p class="dicas-sub">Pequenas mudanças geram grandes resultados no seu bolso</p>
+    <div class="dicas-grid">
+      <div class="dica-card">
+        <div class="dica-icone">🛒</div>
+        <h3>Regra dos 30 dias</h3>
+        <p>Antes de comprar algo por impulso, espere 30 dias. Se ainda quiser, compre.</p>
+      </div>
+      <div class="dica-card">
+        <div class="dica-icone">📊</div>
+        <h3>Regra 50/30/20</h3>
+        <p>50% necessidades, 30% desejos, 20% poupança. Simples e eficaz.</p>
+      </div>
+      <div class="dica-card">
+        <div class="dica-icone">☕</div>
+        <h3>Café em casa</h3>
+        <p>Trocar o café da cafeteria economiza mais de R$ 200 por mês.</p>
+      </div>
+      <div class="dica-card">
+        <div class="dica-icone">💳</div>
+        <h3>Cuidado com cartão</h3>
+        <p>Pague a fatura total. Juros rotativos destroem orçamentos.</p>
+      </div>
+      <div class="dica-card">
+        <div class="dica-icone">📱</div>
+        <h3>Auditoria de assinaturas</h3>
+        <p>Cancele o que você não usa há mais de 30 dias.</p>
+      </div>
+      <div class="dica-card">
+        <div class="dica-icone">🎯</div>
+        <h3>Metas claras</h3>
+        <p>Defina objetivos concretos com prazo. Metas vagas não funcionam.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Feito com <span>♥</span> — Java + Spring Boot + H2
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
